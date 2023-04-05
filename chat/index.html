@@ -43,9 +43,17 @@
   socket.on('chat message', function(msg) {
     var item = document.createElement('li');
     item.textContent = msg;
-    messages.appendChild(item)
+    messages.appendChild(item);
     window.scrollTo(0, document.body.scrollHeight);
   });
+
+  socket.on('user message', function(user) {
+    var userElement = document.createElement('li');
+    userElement.textContent = user;
+    messages.appendChild(userElement);
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+
 </script>
 </body>
 </html>
